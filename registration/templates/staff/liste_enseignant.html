@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<nav>
+<table>
+<caption>Liste du personnel de l'etablissement</caption>
+<tr>
+<th>Nom</th>
+<th>Tel</th>
+<th>Email</th>
+<th>Poste</th>
+</tr>
+{% for enseignant in object_list %}
+<tr>
+<td>{{ enseignant.nom }}</td>
+<td>{{ enseignant.tel}}</td>
+<td>{{ enseignant.email}}</td>
+<td>{{ enseignant.fonction}}</td>
+</tr>
+{% endfor %}
+</table>
+</nav>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block title %}Informaion sur Eleve{% endblock %}
+{% block content %}
+<nav>information sur eleve
+<ul>
+    <ol>Nom:{{ nom |upper}}</ol>
+     <ol>Prenom:{{ prenom|upper }}</ol>
+     <ol>Date de Naissance:{{ dateNaissance}}</ol>
+     <ol>Lieu de Naissance:{{ lieuNaissance |upper}}</ol>
+     <ol>Sex:{{ sex |upper }}</ol>
+    <ol>Numero du parents:{{ parents }}</ol>
+    <ol>Classe:{{ classe |upper}}</ol>
+
+    </ul>
+</nav>
+
+{% endblock %}

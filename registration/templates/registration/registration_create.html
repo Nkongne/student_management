@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+{% block title %}Inscrire un eleve{% endblock %}
+{% block content %}
+    <form method="POST">{% csrf_token %}
+    {{ form|crispy}}
+    <input type="submit" value="Enregistrer" class="btn btn-success"/>
+       <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
+    <a class="dropdown-item" href="{% url 'registration:pdf' %}"><button type="button" class="btn btn-primary">liste des eleves</button> </a>
+    </form>
+{% endblock %}

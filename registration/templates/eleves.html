@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gestion des eleves</title>
+</head>
+<body>
+
+
+<nav>
+    {% for e in eleve %}
+    <ul>
+        <ol>{{ forloop.counter }}-{{ e.nom |upper}}</ol>
+    </ul>
+    <ul>
+        <li>{{ e.prenom }}</li>
+    </ul>
+    <ul>
+        <li>{{ e.parent_fields }}</li>
+    </ul>
+    {% endfor %}
+</nav>
+
+
+</body>
+</html>

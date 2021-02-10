@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block content %}
+{% block title_html %}classes{% endblock %}
+</title>
+<body>
+
+    <h1>Liste des classes</h1>
+    <nav>
+   {% for c in classes %}
+        <ul>
+        <ol>{{ forloop.counter }}-{{c.nom_classe|upper}}</ol>
+         </ul>
+        <ul>
+        <li>{{c.nbre_places}}</li>
+         </ul>
+    {% endfor %}
+    </nav>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parent</title>
+</head>
+<body>
+
+<ul>
+    {% for p in parents %}
+    <ol>{{ forloop.counter }}-{{ p.nom |upper}}</ol>
+</ul>
+    <ul>
+    <li>{{ p.tel }}</li>
+        {% endfor %}
+</ul>
+
+</body>
+</html>

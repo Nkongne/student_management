@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block title %}Remplir les notes{% endblock %}
+{% block content %}
+    <form method="POST">{% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Enregistrer" class="btn btn-success"/>
+       <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
+    <a class="dropdown-item" href="{% url 'registration:pdf' %}"><button type="button" class="btn btn-primary">liste des eleves</button> </a>
+    </form>
+{% endblock %}

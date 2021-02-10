@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block title %}Enregistrer un parent d'eleve{% endblock %}
+{% block content %}
+    <form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+        <input type="submit" value="Enregistrer" class="btn btn-success"/>
+        <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
+
+
+    </form>
+{% endblock %}
