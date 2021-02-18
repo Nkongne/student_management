@@ -1,10 +1,12 @@
 {% extends 'index.html' %}
-
+{% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 <nav>
 <table>
 <caption>Liste du personnel de l'etablissement</caption>
 <tr>
+    <th>Numero</th>
 <th>Nom</th>
 <th>Tel</th>
 <th>Email</th>
@@ -12,7 +14,8 @@
 </tr>
 {% for enseignant in object_list %}
 <tr>
-<td>{{ enseignant.nom }}</td>
+    <td>{{ forloop.counter }}-</td>
+<td><b>{{ enseignant.nom }}</b></td>
 <td>{{ enseignant.tel}}</td>
 <td>{{ enseignant.email}}</td>
 <td>{{ enseignant.fonction}}</td>

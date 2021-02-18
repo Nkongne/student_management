@@ -23,3 +23,18 @@ class EnseignantForm2(ModelForm):
             'email',
             'fonction',
         ]
+        widgets = {
+            'nom': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Entrer Nom Enseignant'
+            }),
+            'tel': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Entrer telphone Enseignant'
+            }),
+            'email': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Entrer adresse email enseignant'
+            }),
+
+        }

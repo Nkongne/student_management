@@ -2,12 +2,13 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load crispy_forms_field %}
-{% block title %}Payer les frais de scolarite{% endblock %}
+{% block title %}remplir bulletin{% endblock %}
 {% block content %}
     <form method="POST">{% csrf_token %}
-   {{ form.as_p}}
+    {{form.as_p}}
+
         <input type="submit" value="Enregistrer" class="btn btn-success"/>
-        <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
+        <button type="button" class="btn btn-primary" onclick="window.history.back()">Annuler </button>
 
 
     </form>

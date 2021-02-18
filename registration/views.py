@@ -148,3 +148,6 @@ def payer_tranche_view(request):
         'form': form
     }
     return render(request, 'registration/payer_tranche.html', context)
+def eleve_view(request):
+    context={}
+    return render(request,'registration/eleve_detail.html',context)
