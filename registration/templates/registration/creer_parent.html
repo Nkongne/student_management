@@ -1,11 +1,70 @@
 {% extends 'index.html' %}
 {% block title %}Enregistrer un parent d'eleve{% endblock %}
 {% block content %}
-    <form method="POST">{% csrf_token %}
+    <form class="form-inline" role="form" method="POST" id="af">{% csrf_token %}
     {{ form.as_p }}
         <input type="submit" value="Enregistrer" class="btn btn-success"/>
         <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
 
 
     </form>
-{% endblock %}
+</div>
+
+
+<div class="row">
+    <div class="col-sm-5" style="background:pink">
+        <div class="panel-body">
+        
+         <form class="form-horizontal" role="form" method="POST">{% csrf_token %}
+                <div class="form-group">
+                    <label for="inputNom" class="col-lg-2 col-sm-2 control-label">nom:</label>
+                    <div class="col-lg-10">
+                  
+                    {{ form.nom }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTel" class="col-lg-2 col-sm-2 control-label">Tel:</label>
+                    <div class="col-lg-10">
+                   
+                    {{ form.tel}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAdress" class="col-lg-2 col-sm-2 control-label">Addresse:</label>
+                    <div class="col-lg-10">
+                   
+                    {{form.adresse}}
+                    </div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <input type="submit" value="Enregistrer" class="btn btn-success"/>
+                        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+                    </div>
+                </div>
+            </form>
+     
+    </div>
+    </div>
+    </div>
+
+<h2> Inline form </h2>
+<div class="row">
+<div class="col-sm-5" style="background: pink">
+<div class="panel-body">
+    <form class="form-inline" role="form" method="POST">{% csrf_token %}
+        <div class="form-group">
+            {{ form.nom }}
+        </div>
+        <div class="form-group">
+            {{ form.tel }}
+        </div>
+        <div class="form-group">
+            {{ form.adresse }}
+        </div>
+        <input type="submit" value="Enregistrer" class="btn btn-success"/>
+        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+    </form>
+    {% endblock %}

@@ -4,20 +4,25 @@
   <link rel="stylesheet" href="{% static 'css/style.css'%} "type="text/css"/>
 {% block content %}
 
-    <form method="POST">{% csrf_token %}
+    <form class="form-horizontal" role="form" method="POST" id="af">{% csrf_token %}
         <div class="form-group">
-            <label>Nom de la classe:</label>
-            {{ form.nom_classe }}
+            <label for="nom_classe" class="col-lg-2 col-sm-2 control-label">Nom de la classe:</label>
+            <div class="col-lg-10">
+            {{form.nom_classe}}
+           </div>
         </div>
-     <div class="form-group">
-            <label>Nombre de places:</label>
-            {{ form.nbre_places }}
+        <div class="form-group">
+            <label for="nbre_places" class="col-lg-2 col-sm-2 control-label">Nombre de places:</label>
+            <div class="col-lg-10">
+            {{form.nbre_places}}
+           </div>
         </div>
-    <input type="submit" value="Enregistrer" class="btn btn-success"/>
-        <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
+        <input type="submit" value="Enregistrer" class="btn btn-success"/>
+        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
 
 
 
 
     </form>
+
 {% endblock %}

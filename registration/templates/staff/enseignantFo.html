@@ -4,26 +4,64 @@
 {% load crispy_forms_field %}
 {% block title %}Payer les frais de scolarite{% endblock %}
 {% block content %}
-    <form method="POST">{% csrf_token %}
-     <div class="form-group">
-            <label>Nom de l'enseignant:</label>
-            {{ form.nom}}
+    
+<div class="row justify-content-center">
+<div class="col-xl-12" style="background: pink">
+<div class="panel-body">
+        <!-- button to generate model form -->
+        <a href="#myModal" data-toggle="modal" class="btn btn-xs btn-success">
+        enregistrer un nouveau enseignant
+        </a>
+        <!-- model form settings -->
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                     <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+                        <h4 class="modal-title">Enregistrer un nouveau enseignant</h4>
+                    </div>
+                    <div class="modal-body">
+        
+        <!-- actual form -->
+                        <form role="form" method="POST">{% csrf_token %}
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label for="inputNom">Nom:</label>
+                                    {{ form.nom}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label for="inputTel">Tel:</label>
+                                    {{ form.tel}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <label for="inputEmail">Email:</label>
+                                    {{ form.email}}
+                                </div>
+                            </div>
+                            <div class="form-group" id="sc">
+                                <div class="col-sm-12">
+                                    <label for="inputPoste">Poste occupe:</label>
+                                    {{ form.fonction}}
+                                </div>
+                            </div>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-10">
+                                <input type="submit" value="Enregistrer" class="btn btn-success"/>
+                                <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+                            </div>
+                        </div>
+                        </form>
+        <!-- actual form ends -->
+                     </div>
+                    </div>
+                </div>
+            </div>
         </div>
-         <div class="form-group">
-            <label>numero telephone de l'enseignant:</label>
-            {{ form.tel}}
         </div>
-         <div class="form-group">
-            <label>Adresse email de l'enseignant:</label>
-            {{ form.email}}
         </div>
-         <div class="form-group">
-            <label>Poste occupe:</label>
-            {{ form.fonction}}
-        </div>
-        <input type="submit" value="Enregistrer" class="btn btn-success"/>
-        <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
-
-
-    </form>
+        <hr>
 {% endblock %}
