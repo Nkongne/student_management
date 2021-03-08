@@ -142,3 +142,5 @@ LANGUAGES=(
     ('en', _('English')),
     ('fr', _('French')),
 )
+import django_heroku
+django_heroku.settings(locals())
