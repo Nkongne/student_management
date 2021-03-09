@@ -4,10 +4,124 @@
 {% load crispy_forms_field %}
 {% block title %}Inscrire un eleve{% endblock %}
 {% block content %}
-    <form method="POST">{% csrf_token %}
-    {{ form|crispy}}
+   <center> <form class="form-horizontal" role="form" method="POST" id="af">{% csrf_token %}
+    {{ form.as_p}}
     <input type="submit" value="Enregistrer" class="btn btn-success"/>
-       <button type="button" class="btn btn-primary" onclick="window.history.back()">Cancel </button>
-    <a class="dropdown-item" href="{% url 'registration:pdf' %}"><button type="button" class="btn btn-primary">liste des eleves</button> </a>
+       <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+    <a class="dropdown-item" href="{% url 'registration:pdf' %}"><button type="button" class="btn btn-primary" onclick="alert('afficher la liste des eleves')">liste des eleves</button> </a>
     </form>
+        
+    <h2> Inline form </h2>
+<div class="row">
+<div class="col-sm-5" style="background: pink">
+<div class="panel-body">
+    <form class="form-inline" role="form" method="POST">{% csrf_token %}
+        <div class="form-group">
+            <label for="inputNom" class="col-lg-2 col-sm-2 control-label">Nom:</label>
+            {{ form.nom }}
+        </div>
+        <div class="form-group">
+            <label for="inputPrenom" class="col-lg-2 col-sm-2 control-label">Prenom:</label>
+            {{ form.prenom }}
+        </div>
+        <div class="form-group">
+            <label for="inputDatenaiss" class="col-lg-2 col-sm-2 control-label">Date Naissance:</label>
+            {{ form.datenaiss }}
+        </div>
+        <div class="form-group">
+            <label for="inputLieunaiss" class="col-lg-2 col-sm-2 control-label">Lieu Naissance:</label>
+            {{ form.lieunaiss }}
+        </div>
+        <div class="form-group">
+            <label for="inputSex" class="col-lg-2 col-sm-2 control-label">Sex:</label>
+            {{ form.sex }}
+        </div>
+        <div class="form-group" id="sc">
+            <label for="inputParent" class="col-lg-2 col-sm-2 control-label">Tel des parents:</label>
+            {{ form.parent}}
+        </div>
+        <div class="form-group" id="sc">
+            <label for="inputClass" class="col-lg-2 col-sm-2 control-label">Classe:</label>
+            {{ form.classe }}
+        </div>
+        <input type="submit" value="Enregistrer" class="btn btn-success"/>
+        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+    </form>
+    </center>
+<div class="row justify-content-center">
+<div class="col-xl-12" style="background: pink">
+<div class="panel-body">
+                <!-- button to generate model form -->
+                <a href="#Modal" data-toggle="modal" class="btn btn-xs btn-success">
+                Inscrire un nouveau eleve
+                </a>
+                <!-- model form settings -->
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="Modal"class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                             <div class="modal-header">
+                                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+                                <h4 class="modal-title">inscrire un nouveau eleve</h4>
+                            </div>
+                            <div class="modal-body">
+                
+                <!-- actual form -->
+                                <form role="form" method="POST">{% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label for="inputNom" class="col-lg-2 col-sm-2 control-label">Nom:</label>
+                                            {{ form.nom }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label for="inputPrenom" class="col-lg-2 col-sm-2 control-label">Prenom:</label>
+                                            {{ form.prenom }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label for="inputDatenaiss" class="col-lg-2 col-sm-2 control-label">Date Naissance:</label>
+                                            {{ form.datenaiss }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label for="inputLieunaiss" class="col-lg-2 col-sm-2 control-label">Lieu Naissance:</label>
+                                            {{ form.lieunaiss }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <label for="inputSex" class="col-lg-2 col-sm-2 control-label">Sex:</label>
+                                            {{ form.sex }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="sc">
+                                        <div class="col-sm-12">
+                                            <label for="inputParent" class="col-lg-2 col-sm-2 control-label">Tel des parents:</label>
+                                            {{ form.parent}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="sc">
+                                        <div class="col-sm-12">
+                                            <label for="inputClass" class="col-lg-2 col-sm-2 control-label">Classe:</label>
+                                            {{ form.classe }}
+                                        </div>
+                                    <div class="row">
+                                         <div class="col-sm-10">
+                                        <input type="submit" value="Enregistrer" class="btn btn-success"/>
+                                        <button type="button" class="btn btn-danger" onclick="window.history.back()">Annuler </button>
+                                         </div>
+                                    </div>    
+                                </form>
+                <!-- actual form ends -->
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+</div>
+</div>
+ </div>
+ <hr>
 {% endblock %}

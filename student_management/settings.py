@@ -28,7 +28,7 @@ SECRET_KEY = ')#+agfwnj_vx3f9@9^x^30wy)^iq5gf$+2@@7l72_9x0(^3ywd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'student_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':  'students_management',
-        'USER': 'wily',
-        'PASSWORD': '250592',
-        'HOST': '127.0.0.1',
+        'NAME':  'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
         'PORT': '5432'
     }
 }
@@ -135,10 +135,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, '../registration/static')]
+STATIC_URL = 'root/app/static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, '../registration/static')]
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 LANGUAGES=(
     ('en', _('English')),
     ('fr', _('French')),
 )
+import django_heroku
+django_heroku.settings(locals())

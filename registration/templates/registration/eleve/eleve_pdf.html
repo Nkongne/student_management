@@ -45,7 +45,7 @@ th,td{
             <table style="width:100%">
               <caption>liste des eleves</caption>
                 <tr>
-
+                <th>Numero</th>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Date de Naissance</th>
@@ -56,6 +56,7 @@ th,td{
                 </tr>
                 {% for e in all_eleves %}
                 <tr>
+                    <td>{{ forloop.counter }}</td>
                     <td><b>{{ e.nom |upper}}</b></td>
 
                     <td><b>{{ e.prenom |upper}} </b></td>

@@ -14,6 +14,21 @@ class creer_parentForm(forms.ModelForm):
             'tel',
             'adresse',
         ]
+        widgets={
+        'nom':forms.TextInput(attrs={
+        'class':'form-control',
+        'placeholder':'nom du parent'
+         }),
+        'tel': forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'numero telephone du parent'
+        }),
+
+           'adresse': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'adresse du parent'
+            })
+        }
 class creer_classeForm(forms.ModelForm):
     class Meta:
         model=Classe
@@ -21,6 +36,16 @@ class creer_classeForm(forms.ModelForm):
             'nom_classe',
             'nbre_places',
         ]
+        widgets={
+            'nom_classe': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Entrer le nom de la classe'
+            }),
+            'nbre_places': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'nombre de places'
+            }),
+        }
 class registrationForm(forms.ModelForm):
     class Meta:
         model=Eleve

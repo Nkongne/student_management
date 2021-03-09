@@ -10,6 +10,7 @@ class Personnel(models.Model):
                    ('Censeur','Censeur'),
                    ('Proviseur','Proviseur')]
     fonction=models.CharField(max_length=50,choices=POSTE)
+
     def __str__(self):
         return self.nom
 

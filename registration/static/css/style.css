@@ -26,10 +26,17 @@ body {
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
     line-height: 1.80857;
+    background-image: url('registration/static/images/banner.jpg') repeat top center #f2f3f5,
+                        url(static/images/logo.png) right bottom no-repeat,
+                        url('images/testi_01.png');
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
 }
 
 body.demos .section {
-    background: url('/registration/static/images/bg.png') repeat top center #f2f3f5;
+    background: url('/registration/static/images/banner.jpg') repeat top center #f2f3f5;
 }
 
 body.demos .section-title img {
@@ -2483,7 +2490,9 @@ select.mobile-device {
 .footer {
     padding: 90px 0 80px !important;
     color: #cccccc;
-	background:#4c5a7d url('/registration/static/images/world-map.png') no-repeat center;
+	background:#4c5a7d url(registration/static/images/world-map.png) no-repeat center;
+    position: relative;
+   
 }
 
 .footer .widget-title {
@@ -3869,8 +3878,19 @@ a.link-style3 {
 .course-meta-bot ul li:hover{
 	color: #eea412;
 }
+#af{
+    position: absolute;
+    background: #ccc;
+    left: 40%;
+    width: 550px;
+    top:25%;
+    margin:0 auto;
 
-
+}
+#sc{
+  
+    overflow:scroll;
+}
 
 
 
