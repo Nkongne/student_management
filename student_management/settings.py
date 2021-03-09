@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-
+import django_heroku
 from django.utils.translation import  ugettext_lazy as _
 from pathlib import Path
 
@@ -142,3 +142,4 @@ LANGUAGES=(
     ('en', _('English')),
     ('fr', _('French')),
 )
+django_heroku.settings(locals())
