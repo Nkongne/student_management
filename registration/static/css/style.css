@@ -10,7 +10,7 @@
 
 @import url(animate.css);
 @import url(animate.min.css);
-@import url(bootstrap-touch-slider.css);
+
 @import url(flaticon.css);
 @import url(timeline.min.css);
 @import url(prettyPhoto.css);
@@ -26,9 +26,8 @@ body {
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
     line-height: 1.80857;
-    background-image: url('registration/static/images/banner.jpg') repeat top center #f2f3f5,
-                        url(static/images/logo.png) right bottom no-repeat,
-                        url('images/testi_01.png');
+    background: url('/registration/static/images/banner.jpg') repeat top center #f2f3f5;
+
 
     background-attachment: fixed;
     background-repeat: no-repeat;
