@@ -1,1 +1,1 @@
-web: gunicorn MonConcert.wsgi
+web: gunicorn student_management.wsgi
